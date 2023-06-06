@@ -3,7 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 
 const Order = () => {
   useEffect(() => {
-    const modal = new window.bootstrap.Modal(document.getElementById('myModal'));
+    const modal = new window.bootstrap.Modal(document.getElementById('myModal'),{
+      backdrop: 'static'
+    });
     modal.show();
 
     return () => {
@@ -22,7 +24,6 @@ const Order = () => {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Congratulations</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div className="modal-body">
             <p>Your order: {flavour} {type} Momo</p>
